@@ -5,16 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF_Assessment"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="1080" Width="1920">
     <Grid>
         <!--<Button Name="btnByCode" Click="btnByCode_Click" Canvas.Left="283" Canvas.Top="10">后台代码实现</Button>-->
-        <Canvas Name="canvas" Background="White" MouseDown="Canvas_MouseDown" MouseMove="Canvas_MouseMove" MouseUp="Canvas_MouseUp" Height="435" Width="800"/>
+        <Canvas Name="canvas" Background="White" MouseDown="Canvas_MouseDown" MouseMove="Canvas_MouseMove" MouseUp="Canvas_MouseUp" Height="1080" Width="1920"/>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10">
             <Button x:Name="rectangleButton" Content="Rectangle" Click="ToggleShape_Click" Width="100" Height="30" />
             <Button x:Name="triangleButton" Content="Triangle" Click="ToggleShape_Click" Width="100" Height="30" />
             <Button x:Name="ellipseButton" Content="Ellipse" Click="ToggleShape_Click" Width="100" Height="30" />
-            <Button x:Name="FillColorButton" Content="Choose Fill Color" Click="ChooseFillColor_Click"/>
-            <Button x:Name="StrokeColorButton" Content="Choose Stroke Color" Click="ChooseStrokeColor_Click"/>
+            <Button x:Name="FillColorButton" Content="線條顏色" Click="ChooseFillColor_Click"/>
+            <Button x:Name="StrokeColorButton" Content="填滿顏色" Click="ChooseStrokeColor_Click"/>
         </StackPanel>
     </Grid>
 </Window>
