@@ -15,6 +15,7 @@
             <Button x:Name="ellipseButton" Content="Ellipse" Click="ToggleShape_Click" Width="100" Height="30" />
             <Button x:Name="FillColorButton" Content="線條顏色" Click="ChooseFillColor_Click"/>
             <Button x:Name="StrokeColorButton" Content="填滿顏色" Click="ChooseStrokeColor_Click"/>
+            <Slider x:Name="thicknessSlider" Minimum="1" Maximum="10" Value="2" Width="134" ValueChanged="ThicknessSlider_ValueChanged" />
         </StackPanel>
     </Grid>
 </Window>

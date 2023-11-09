@@ -26,6 +26,8 @@ namespace WPF_Assessment
         private ShapeType currentShapeType = ShapeType.Rectangle;
         private SolidColorBrush customFillColor = new SolidColorBrush(Colors.Blue); // 自訂填充顏色
         private SolidColorBrush customStrokeColor = new SolidColorBrush(Colors.Red); // 自訂邊框顏色
+        private Line myLine = new Line(); // 自訂邊框顏色
+
         public MainWindow()
         {
             InitializeComponent();
@@ -34,13 +36,13 @@ namespace WPF_Assessment
         private void Canvas_MouseDown(object sender, MouseButtonEventArgs e)
         {
             startPoint = e.GetPosition(canvas);
-
+            myLine.StrokeThickness = thicknessSlider.Value;
             if (currentShapeType == ShapeType.Rectangle)
             {
                 currentShape = new Rectangle
                 {
                     Stroke = customFillColor,
-                    StrokeThickness = 2,
+                    StrokeThickness = myLine.StrokeThickness,
                     Fill = customStrokeColor
                 };
             }
@@ -49,7 +51,7 @@ namespace WPF_Assessment
                 currentShape = new Polygon
                 {
                     Stroke = customFillColor,
-                    StrokeThickness = 2,
+                    StrokeThickness = myLine.StrokeThickness,
                     Fill = customStrokeColor
                 };
                 ((Polygon)currentShape).Points = new PointCollection
@@ -64,7 +66,7 @@ namespace WPF_Assessment
                 currentShape = new Ellipse
                 {
                     Stroke = customFillColor,
-                    StrokeThickness = 2,
+                    StrokeThickness = myLine.StrokeThickness,
                     Fill = customStrokeColor
                 };
             }
@@ -154,6 +156,11 @@ namespace WPF_Assessment
                 }
             }
             StrokeColorButton.Background = customStrokeColor;
+        }
+
+        private void ThicknessSlider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            myLine.StrokeThickness = thicknessSlider.Value;
         }
 
         enum ShapeType
